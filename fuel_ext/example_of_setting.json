@@ -1,0 +1,32 @@
+{
+    "master_ip": "10.20.0.2",
+    "env_name": "test1",
+    "nodes" : [
+        {"mac": "08:00:27:97:7f:31",
+         "name": "contr1",
+         "roles": ["controller"],
+         "disks": {"sda":
+                      {"os": 10000, "image": 9852}
+                  },
+         "interfaces": {"eth1": ["private", "management", "public"],
+                        "eth0": ["storage"]}},
+        {"mac": "08:00:27:d4:04:57",
+         "name": "comp1",
+         "roles": ["compute"],
+         "disks": {"sda":
+                      {"os": 10000, "vm": 9852}
+                  }
+        }
+    ],
+    "networks": {"public_network": {
+                     "cidr": "10.0.3.0/24",
+                     "gateway": "10.0.3.2",
+                     "ip_ranges": [["10.0.3.16", "10.0.3.100"]]
+                     },
+                 "floating_ranges": [["10.0.3.101", "10.0.3.103"]],
+                     "public": {
+                     "public_vip": "10.0.3.16",
+                     "public_vrouter_vip": "10.0.3.17"
+                     }
+    }
+}
